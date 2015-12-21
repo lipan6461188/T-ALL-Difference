@@ -1,6 +1,6 @@
 import re
 
-h = open('/Users/lee/Desktop/project/guo/mRNA_Expression.txt','r')
+h = open('./mRNA_Expression.txt','r')
 line = h.readline().strip()
 print line
 line = h.readline().strip()

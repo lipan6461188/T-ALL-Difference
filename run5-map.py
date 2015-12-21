@@ -37,4 +37,5 @@ if __name__ == '__main__':
 			p = Pool(10)
 			p.map(worker,file_list[i:i+10])
 			i += 10
+		p.close()
 		p.join()

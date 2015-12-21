@@ -6,7 +6,7 @@ column <- as.data.frame(strsplit(as.character(map[,2])," "))
 map[,2] <- t(column[1,])
 map[,3] <- t(column[2,])
 
-output_file_path <- paste(ROOT_PATH,"output2/",sep="")
+output_file_path <- paste(ROOT_PATH,"output3/",sep="")
 all_files <- list.files(output_file_path)
 all_files <- all_files[grepl(all_files,patter=".*ReadsPerGene.*",perl=T)]
 
@@ -27,12 +27,15 @@ for(i in c(1:dim(map)[1]))
 	print(i)
 }
 
+#这一步超慢，可以选用run6.5替代。
 split_genes <- strsplit(split="\\.",x=genes)
 genes <- c()
 for(i in c(1:length(split_genes)))
 {
 	genes <- c(genes,split_genes[[i]][1])
 }
+
+#合并成数据框
 frame <- data.frame(row.names=genes)
 for(i in l)
 {
